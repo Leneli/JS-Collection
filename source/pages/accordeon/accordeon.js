@@ -2,8 +2,7 @@
 import "normalize.css";
 import "../main.scss";
 // Page styles
-import "./index.scss";
-import "../accordeon/accordeon.scss";
+import "./accordeon.scss";
 
 // Connect modules
 import { Accordeon } from "../../modules/accordeon";

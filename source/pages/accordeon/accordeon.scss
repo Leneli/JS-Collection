@@ -1,0 +1,105 @@
+$padding-top: 15px;
+$padding-left: 20px;
+
+$first1: #015666;
+$first2: #206876;
+$first3: #04859D;
+$first4: #5FBDCE;
+$first5: #37B6CE;
+$secnd1: #A65100;
+$secnd2: #BF7630;
+$secnd3: #FF7C00;
+$secnd4: #FF9D40;
+$secnd5: #FFB773;
+$white:  #FFF;
+$grey:   #e7e7e7;
+
+.accordeon {
+	position: relative;
+}
+
+.accordeon__item {
+	position: relative;
+	margin-bottom: 5px;
+	font-size: 0;
+	background-color: rgba($secnd5, .3);
+	overflow: hidden;
+
+	&.active {
+		.accordeon__title {
+			@extend .accordeon__title:hover;
+		}
+		.accordeon__body {
+			height: auto;
+		}
+	}
+}
+
+.accordeon__title {
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	font-size: 1.3rem;
+	padding: $padding-top $padding-left;
+
+	&:nth-child(odd) {
+		background-color: $first3;
+		color: $white;
+	}
+
+	&:hover {
+		background-color: $secnd5;
+		color: $white;
+		cursor: pointer;
+	}
+}
+
+.accordeon__body {
+	height: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	padding-left: $padding-left;
+	padding-right: $padding-left;
+	font-size: 1rem;
+
+	& > * {
+		margin: 0;
+	}
+
+	& > p {
+		padding: 1rem 0;
+	}
+}
+
+
+// For main page
+.accordeon {
+	margin-bottom: 70px;
+}
+.accordeon__item_nodone {
+	opacity: .6;
+
+	.accordeon__title,
+	.accordeon__title:hover {
+		background-color: rgba($secnd2, .2);
+		color: $secnd2;
+		cursor: not-allowed;
+	}
+
+	.accordeon__title::after {
+		content: "not ready";
+		display: block;
+		position: absolute;
+		right: 0;
+		height: 1rem;
+		line-height: 1rem;
+		font-size: .6rem;
+		font-weight: 300;
+		padding: 0 20px;
+		background-color: $first3;
+		color: $white;
+		text-transform: uppercase;
+		transform: rotate(45deg) translate(-3px, -24px);
+	}
+}

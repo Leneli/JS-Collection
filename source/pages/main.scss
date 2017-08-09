@@ -1,0 +1,97 @@
+// Common styles
+
+// Variables
+// colors:
+$first1: #015666;
+$first2: #206876;
+$first3: #04859D;
+$first4: #5FBDCE;
+$first5: #37B6CE;
+$secnd1: #A65100;
+$secnd2: #BF7630;
+$secnd3: #FF7C00;
+$secnd4: #FF9D40;
+$secnd5: #FFB773;
+$white:  #FFF;
+$black:  #000;
+//sizes:
+$wrapp: 10%;
+$font: 16px;
+
+// Mixins
+
+// Basic
+* { box-sizing: border-box; }
+*::selection {
+    color: $white;
+    background-color: rgba($secnd3, .3);
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: $font;
+    font-family: "Century Gothic", "Gill Sans", Arial, sans-serif;
+    font-weight: normal;
+    color: $first1;
+}
+
+
+// footer to top the page
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.header,
+.footer {
+    flex-shrink: 0;
+}
+.main {
+    flex: 1 0 auto;
+}
+
+// wrapper
+.wrapper {
+    padding-left:  $wrapp;
+    padding-right: $wrapp;
+}
+
+// header & footer
+.header,
+.footer {
+    background-color: $first1;
+    color: $white;
+}
+
+.header {
+    font-size: 2rem;
+}
+
+.header__logo {
+    margin: .5rem 0;
+    font-weight: 300;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+}
+
+// links
+.demo {
+    display: inline-block;
+    padding: 5px 7px;
+    color: $white;
+    background-color: $secnd1;
+    font-variant: small-caps;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $first2;
+    }
+}

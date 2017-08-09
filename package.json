@@ -28,6 +28,7 @@
 		"webpack-merge": "^4.1.0"
 	},
 	"dependencies": {
-		"normalize.css": "^7.0.0"
+		"normalize.css": "^7.0.0",
+		"youtube-iframe": "^1.0.3"
 	}
 }

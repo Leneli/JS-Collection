@@ -24,7 +24,8 @@ const common = merge([
         //точками входа могут служить только те модули, которые не используются другими модулями приложения
         entry: {
             "index": PATHS.source + "/pages/index/index.js",
-            "blog": PATHS.source + "/pages/blog/blog.js"
+            "accordeon": PATHS.source + "/pages/accordeon/accordeon.js",
+            "videoplayeryt": PATHS.source + "/pages/videoplayeryt/videoplayeryt.js"
         },
         //имена файлов и дериктория для результатов работы
         output: {
@@ -50,12 +51,19 @@ const common = merge([
                 chunks: ["index", "common"],
                 template: PATHS.source + "/pages/index/index.pug"
             }),
-            //страница блога (blog.html)
+            //страница Accordeon (accordeon.html)
             new htmlWebpackPlugin({
-                filename: "blog.html",
-                chunks: ["blog", "common"],
-                template: PATHS.source + "/pages/blog/blog.pug"
+                filename: "accordeon.html",
+                chunks: ["accordeon", "common"],
+                template: PATHS.source + "/pages/accordeon/accordeon.pug"
             }),
+            //страница VideoPlayerYT (videoplayeryt.html)
+            new htmlWebpackPlugin({
+                filename: "videoplayeryt.html",
+                chunks: ["videoplayeryt", "common"],
+                template: PATHS.source + "/pages/videoplayeryt/videoplayeryt.pug"
+            }),
+            
             //вынести общие части кода из скриптов и стилей
             new webpack.optimize.CommonsChunkPlugin({
                 name: "common"
